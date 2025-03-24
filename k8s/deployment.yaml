@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: http-error-simulator
+  name: http-error-simulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: http-error-simulator
+  template:
+    metadata:
+      labels:
+        app: http-error-simulator
+    spec:
+      containers:
+      - image: http-error-simulator
+        name: http-error-simulator
+        resources: {}
